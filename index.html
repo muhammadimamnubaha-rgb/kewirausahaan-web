@@ -1,222 +1,245 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IoTech Solution</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IoTech Solution</title>
 
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
-  <!-- ICON -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-  <!-- AOS ANIMATION -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+body{
+background: linear-gradient(135deg,#020617,#0f172a,#1e3a8a);
+color:white;
+}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+header{
+display:flex;
+justify-content:space-between;
+padding:20px 10%;
+position:sticky;
+top:0;
+background:rgba(0,0,0,0.4);
+backdrop-filter: blur(10px);
+}
 
-    body {
-      background: #0f172a;
-      color: white;
-    }
+header h1{color:#38bdf8;}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 10%;
-      background: rgba(0,0,0,0.4);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+}
 
-    header h1 {
-      color: #38bdf8;
-    }
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
 
-    nav a {
-      color: white;
-      margin-left: 20px;
-      text-decoration: none;
-    }
+.hero-bg{
+position:absolute;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#38bdf8,transparent);
+filter:blur(120px);
+animation:float 6s infinite;
+}
 
-    .hero {
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: linear-gradient(to right, #020617, #0f172a);
-    }
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-30px)}
+100%{transform:translateY(0)}
+}
 
-    .hero h2 {
-      font-size: 42px;
-    }
+.hero h2{font-size:42px;}
 
-    .btn {
-      background: #38bdf8;
-      padding: 12px 25px;
-      border-radius: 10px;
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 15px;
-      display: inline-block;
-    }
+.btn{
+background:#38bdf8;
+padding:12px 25px;
+border-radius:10px;
+color:black;
+text-decoration:none;
+display:inline-block;
+margin-top:15px;
+}
 
-    .section {
-      padding: 60px 10%;
-      text-align: center;
-    }
+/* SECTION */
+.section{
+padding:70px 10%;
+text-align:center;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
 
-    .card {
-      background: #1e293b;
-      border-radius: 15px;
-      overflow: hidden;
-      transition: 0.3s;
-    }
+.card{
+background:#1e293b;
+border-radius:15px;
+overflow:hidden;
+transition:0.3s;
+}
 
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
 
-    .card h3 {
-      margin: 10px 0;
-    }
+.card:hover{
+transform:translateY(-10px);
+background:#334155;
+}
 
-    .card p {
-      padding: 0 10px 20px;
-      color: #cbd5f5;
-    }
+/* CONTACT */
+.contact-box{
+margin:10px;
+font-size:18px;
+}
 
-    .card:hover {
-      transform: translateY(-10px);
-      background: #334155;
-    }
+.contact-box i{
+color:#38bdf8;
+margin-right:10px;
+}
 
-    .contact-box {
-      margin-top: 20px;
-      font-size: 18px;
-    }
-
-    .contact-box i {
-      margin-right: 10px;
-      color: #38bdf8;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #020617;
-    }
-  </style>
+footer{
+text-align:center;
+padding:20px;
+background:#020617;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>IoTech</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Layanan</a>
-    <a href="#">Kontak</a>
-  </nav>
+<h1>IoTech</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#layanan">Layanan</a>
+<a href="#tim">Tim</a>
+<a href="#kontak">Kontak</a>
+</nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <div data-aos="fade-up">
-    <h2>Solusi IoT Modern 🚀</h2>
-    <p>Sistem pintar untuk rumah, bisnis, dan industri</p>
-    <a href="https://wa.me/6285189477216" class="btn">Konsultasi Sekarang</a>
-  </div>
+<div data-aos="fade-up">
+<h2>Solusi IoT Modern 🚀</h2>
+<p>Sistem pintar untuk rumah, bisnis, dan industri</p>
+<a href="https://wa.me/6285189477216" class="btn">Konsultasi</a>
+</div>
+<div class="hero-bg"></div>
 </section>
 
-<section class="section">
-  <h2 data-aos="fade-up">Produk Kami</h2>
-  <div class="cards">
+<!-- LAYANAN -->
+<section class="section" id="layanan">
+<h2 data-aos="fade-up">Produk Kami</h2>
 
-    <div class="card" data-aos="zoom-in">
-      <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc" />
-      <h3>Monitoring Air</h3>
-      <p>Pantau kualitas air via HP secara real-time</p>
-    </div>
+<div class="cards">
 
-    <div class="card" data-aos="zoom-in">
-      <img src="https://images.unsplash.com/photo-1558002038-1055907df827" />
-      <h3>Smart Home</h3>
-      <p>Kendalikan lampu & perangkat otomatis</p>
-    </div>
+<div class="card" data-aos="zoom-in">
+<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
+<h3>Monitoring Air</h3>
+<p>Pantau kualitas air real-time</p>
+</div>
 
-    <div class="card" data-aos="zoom-in">
-      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" />
-      <h3>Security System</h3>
-      <p>Sistem keamanan berbasis sensor</p>
-    </div>
+<div class="card" data-aos="zoom-in">
+<img src="https://images.unsplash.com/photo-1558002038-1055907df827">
+<h3>Smart Home</h3>
+<p>Kendalikan perangkat dari HP</p>
+</div>
 
-  </div>
+<div class="card" data-aos="zoom-in">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+<h3>Security System</h3>
+<p>Sistem keamanan berbasis sensor</p>
+</div>
+
+</div>
 </section>
 
+<!-- KEUNGGULAN -->
 <section class="section">
-  <h2 data-aos="fade-up">Kenapa Pilih Kami?</h2>
-  <div class="cards">
+<h2 data-aos="fade-up">Kenapa Pilih Kami?</h2>
 
-    <div class="card" data-aos="fade-right">
-      <h3>⚡ Real-Time</h3>
-      <p>Data langsung ke smartphone</p>
-    </div>
+<div class="cards">
 
-    <div class="card" data-aos="fade-up">
-      <h3>⚙️ Custom</h3>
-      <p>Menyesuaikan kebutuhan kamu</p>
-    </div>
+<div class="card" data-aos="fade-right">
+<h3>⚡ Real-Time</h3>
+<p>Data langsung ke smartphone</p>
+</div>
 
-    <div class="card" data-aos="fade-left">
-      <h3>💰 Terjangkau</h3>
-      <p>Harga ramah mahasiswa</p>
-    </div>
+<div class="card" data-aos="fade-up">
+<h3>⚙️ Custom</h3>
+<p>Menyesuaikan kebutuhan</p>
+</div>
 
-  </div>
+<div class="card" data-aos="fade-left">
+<h3>💰 Terjangkau</h3>
+<p>Cocok untuk mahasiswa</p>
+</div>
+
+</div>
 </section>
 
-<section class="section">
-  <h2 data-aos="fade-up">Kontak Kami</h2>
+<!-- TIM -->
+<section class="section" id="tim">
+<h2 data-aos="fade-up">Tim Kami</h2>
 
-  <div class="contact-box" data-aos="fade-right">
-    <p><i class="fa fa-phone"></i> 085189477216</p>
-  </div>
+<div class="cards">
 
-  <div class="contact-box" data-aos="fade-left">
-    <p><i class="fa fa-envelope"></i> muhammadimamnubaha@gmail.com</p>
-  </div>
+<div class="card" data-aos="zoom-in">
+"<img src="https://drive.google.com/uc?export=view&id=1DWX6o-4Shok-3Gms74-1MDjXyQXwYXxy">">
+<h3>Muhammad Imam Nubaha</h3>
+<p>IoT Developer</p>
+</div>
 
-  <br>
+<div class="card" data-aos="zoom-in">
+<img src="https://i.pravatar.cc/300?img=2">
+<h3>Heru Setio utomo</h3>
+<p>Hardware Engineer</p>
+</div>
 
-  <a href="https://wa.me/6285189477216" class="btn">Chat WhatsApp</a>
+</div>
+</section>
+
+<!-- KONTAK -->
+<section class="section" id="kontak">
+<h2 data-aos="fade-up">Kontak Kami</h2>
+
+<div class="contact-box">
+<p><i class="fa fa-phone"></i> 0851-8947-7216</p>
+</div>
+
+<div class="contact-box">
+<p><i class="fa fa-envelope"></i> muhammadimamnubaha@gmail.com</p>
+</div>
+
+<br>
+
+<a href="https://wa.me/6285189477216" class="btn">Chat WhatsApp</a>
 </section>
 
 <footer>
-  <p>© 2026 IoTech Solution</p>
+<p>© 2026 IoTech Solution</p>
 </footer>
 
-<!-- AOS SCRIPT -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init();
+AOS.init();
 </script>
 
 </body>
