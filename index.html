@@ -5,7 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IoTech Solution</title>
 
+  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- ICON -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS ANIMATION -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
   <style>
     * {
@@ -24,9 +31,10 @@
       display: flex;
       justify-content: space-between;
       padding: 20px 10%;
-      background: rgba(0,0,0,0.3);
+      background: rgba(0,0,0,0.4);
       position: sticky;
       top: 0;
+      z-index: 1000;
     }
 
     header h1 {
@@ -45,18 +53,11 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 20px;
       background: linear-gradient(to right, #020617, #0f172a);
     }
 
     .hero h2 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      color: #cbd5f5;
-      margin-bottom: 20px;
+      font-size: 42px;
     }
 
     .btn {
@@ -66,21 +67,13 @@
       color: black;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #0ea5e9;
+      margin-top: 15px;
+      display: inline-block;
     }
 
     .section {
       padding: 60px 10%;
       text-align: center;
-    }
-
-    .section h2 {
-      margin-bottom: 30px;
-      font-size: 28px;
     }
 
     .cards {
@@ -91,9 +84,24 @@
 
     .card {
       background: #1e293b;
-      padding: 20px;
       border-radius: 15px;
+      overflow: hidden;
       transition: 0.3s;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    .card p {
+      padding: 0 10px 20px;
+      color: #cbd5f5;
     }
 
     .card:hover {
@@ -101,7 +109,17 @@
       background: #334155;
     }
 
-    .footer {
+    .contact-box {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .contact-box i {
+      margin-right: 10px;
+      color: #38bdf8;
+    }
+
+    footer {
       text-align: center;
       padding: 20px;
       background: #020617;
@@ -121,59 +139,85 @@
 </header>
 
 <section class="hero">
-  <div>
-    <h2>Solusi IoT Modern untuk Masa Depan</h2>
-    <p>Kami membantu kamu membuat sistem IoT canggih & terjangkau</p>
+  <div data-aos="fade-up">
+    <h2>Solusi IoT Modern 🚀</h2>
+    <p>Sistem pintar untuk rumah, bisnis, dan industri</p>
     <a href="https://wa.me/6281234567890" class="btn">Konsultasi Sekarang</a>
   </div>
 </section>
 
 <section class="section">
-  <h2>Layanan Kami</h2>
+  <h2 data-aos="fade-up">Produk Kami</h2>
   <div class="cards">
-    <div class="card">
+
+    <div class="card" data-aos="zoom-in">
+      <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc" />
       <h3>Monitoring Air</h3>
-      <p>Pantau kualitas air secara real-time</p>
+      <p>Pantau kualitas air via HP secara real-time</p>
     </div>
-    <div class="card">
+
+    <div class="card" data-aos="zoom-in">
+      <img src="https://images.unsplash.com/photo-1558002038-1055907df827" />
       <h3>Smart Home</h3>
-      <p>Kendalikan perangkat dari HP</p>
+      <p>Kendalikan lampu & perangkat otomatis</p>
     </div>
-    <div class="card">
-      <h3>Keamanan Sensor</h3>
-      <p>Alarm otomatis berbasis sensor</p>
+
+    <div class="card" data-aos="zoom-in">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" />
+      <h3>Security System</h3>
+      <p>Sistem keamanan berbasis sensor</p>
     </div>
+
   </div>
 </section>
 
 <section class="section">
-  <h2>Kenapa Pilih Kami?</h2>
+  <h2 data-aos="fade-up">Kenapa Pilih Kami?</h2>
   <div class="cards">
-    <div class="card">
-      <h3>Real-Time</h3>
-      <p>Data langsung ke HP kamu</p>
+
+    <div class="card" data-aos="fade-right">
+      <h3>⚡ Real-Time</h3>
+      <p>Data langsung ke smartphone</p>
     </div>
-    <div class="card">
-      <h3>Custom</h3>
-      <p>Menyesuaikan kebutuhan</p>
+
+    <div class="card" data-aos="fade-up">
+      <h3>⚙️ Custom</h3>
+      <p>Menyesuaikan kebutuhan kamu</p>
     </div>
-    <div class="card">
-      <h3>Terjangkau</h3>
-      <p>Cocok untuk mahasiswa & UMKM</p>
+
+    <div class="card" data-aos="fade-left">
+      <h3>💰 Terjangkau</h3>
+      <p>Harga ramah mahasiswa</p>
     </div>
+
   </div>
 </section>
 
 <section class="section">
-  <h2>Kontak Kami</h2>
-  <p>Konsultasi gratis sekarang juga</p>
+  <h2 data-aos="fade-up">Kontak Kami</h2>
+
+  <div class="contact-box" data-aos="fade-right">
+    <p><i class="fa fa-phone"></i> 085189477216</p>
+  </div>
+
+  <div class="contact-box" data-aos="fade-left">
+    <p><i class="fa fa-envelope"></i> muhammadimamnubaha@gmail.com</p>
+  </div>
+
   <br>
-  <a href="https://wa.me/6281234567890" class="btn">Chat WhatsApp</a>
+
+  <a href="https://wa.me/6285189477216" class="btn">Chat WhatsApp</a>
 </section>
 
-<div class="footer">
+<footer>
   <p>© 2026 IoTech Solution</p>
-</div>
+</footer>
+
+<!-- AOS SCRIPT -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 
 </body>
 </html>
