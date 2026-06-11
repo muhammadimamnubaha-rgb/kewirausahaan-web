@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IoTech Solution</title>
+<title>IoTech Solution - Solusi IoT Modern</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -15,27 +15,31 @@
 body{
 background: linear-gradient(135deg,#020617,#0f172a,#1e3a8a);
 color:white;
+overflow-x: hidden;
 }
 
 /* HEADER */
 header{
 display:flex;
 justify-content:space-between;
+align-items: center;
 padding:20px 10%;
 position:sticky;
 top:0;
-background:rgba(0,0,0,0.4);
-backdrop-filter: blur(10px);
+background:rgba(2, 6, 23, 0.7);
+backdrop-filter: blur(12px);
 z-index:1000;
+border-bottom: 1px solid rgba(56, 189, 248, 0.2);
 }
 
-header h1{color:#38bdf8;}
+header h1{color:#38bdf8; font-weight: 800;}
 
 nav a{
 color:white;
 margin-left:20px;
 text-decoration:none;
 transition:0.3s;
+font-weight: 600;
 }
 
 nav a:hover{
@@ -62,12 +66,21 @@ background:radial-gradient(circle,#38bdf8,transparent);
 filter:blur(120px);
 animation:float 6s infinite;
 z-index:0;
+top: 20%;
+left: 30%;
 }
 
 @keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-30px)}
-100%{transform:translateY(0)}
+0%{transform:translateY(0) scale(1)}
+50%{transform:translateY(-30px) scale(1.1)}
+100%{transform:translateY(0) scale(1)}
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+max-width: 800px;
+padding: 0 20px;
 }
 
 .hero h2{
@@ -75,106 +88,327 @@ font-size:52px;
 font-weight:800;
 color:#fff;
 letter-spacing:1px;
+line-height: 1.2;
 text-shadow:
 0 0 10px rgba(56,189,248,0.9),
-0 0 25px rgba(56,189,248,0.7),
-0 0 40px rgba(56,189,248,0.5);
+0 0 25px rgba(56,189,248,0.5);
 }
 
 .hero p{
 color:#e2e8f0;
-font-size:18px;
-margin-top:10px;
+font-size:20px;
+margin-top:20px;
 }
 
 .btn{
-background:#38bdf8;
-padding:12px 25px;
-border-radius:10px;
+background: linear-gradient(45deg, #38bdf8, #0ea5e9);
+padding: 14px 30px;
+border-radius:50px;
 color:black;
 text-decoration:none;
 display:inline-block;
-margin-top:20px;
+margin-top:30px;
 font-weight:bold;
 transition:0.3s;
+box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+cursor: pointer;
+border: none;
 }
 
 .btn:hover{
-background:#0ea5e9;
+transform: translateY(-3px);
+box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
+background: linear-gradient(45deg, #0ea5e9, #38bdf8);
 }
 
 /* SECTION */
 .section{
-padding:70px 10%;
+padding:90px 10%;
 text-align:center;
 }
 
 .section h2{
-margin-bottom:30px;
+font-size: 36px;
+font-weight: 800;
+margin-bottom:15px;
+color: #fff;
 }
 
-/* CARD */
+.section-subtitle {
+color: #94a3b8;
+margin-bottom: 50px;
+font-size: 16px;
+}
+
+/* CARD GENERAL */
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
 .card{
 background:#1e293b;
-border-radius:15px;
+border-radius:20px;
 overflow:hidden;
-transition:0.3s;
-padding-bottom:20px;
+transition:all 0.4s ease;
+border: 1px solid rgba(255,255,255,0.05);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+cursor: pointer;
+}
+
+.card:hover{
+transform:translateY(-12px);
+background:#24344d;
+border-color: rgba(56, 189, 248, 0.4);
+box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
+}
+
+/* KATEGORI PRODUK & HARGA */
+.product-image-wrapper {
+position: relative;
+width: 100%;
+height: 200px;
+overflow: hidden;
 }
 
 .card img{
 width:100%;
-height:180px;
+height:100%;
 object-fit:cover;
+transition: 0.5s;
 }
 
-.card h3{
-margin-top:10px;
+.card:hover img {
+transform: scale(1.1);
 }
 
-.card p{
-padding:0 10px;
-color:#cbd5f5;
+.price-badge {
+position: absolute;
+bottom: 15px;
+right: 15px;
+background: rgba(15, 23, 42, 0.85);
+padding: 6px 14px;
+border-radius: 30px;
+color: #38bdf8;
+font-weight: bold;
+font-size: 14px;
+backdrop-filter: blur(5px);
+border: 1px solid rgba(56, 189, 248, 0.3);
 }
 
-.card:hover{
-transform:translateY(-10px);
-background:#334155;
+.product-info {
+padding: 25px 20px;
+text-align: left;
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
 }
 
-/* PROFIL FOTO BULAT */
+.product-info h3{
+font-size: 20px;
+margin-bottom: 10px;
+color: #fff;
+}
+
+.product-info p{
+color: #94a3b8;
+font-size: 14px;
+line-height: 1.6;
+margin-bottom: 20px;
+}
+
+.btn-sm {
+background: transparent;
+border: 1px solid #38bdf8;
+color: #38bdf8;
+padding: 10px 20px;
+border-radius: 50px;
+text-decoration: none;
+text-align: center;
+font-weight: 600;
+font-size: 14px;
+transition: 0.3s;
+display: block;
+margin-top: auto;
+}
+
+.card:hover .btn-sm {
+background: #38bdf8;
+color: #020617;
+}
+
+/* MODAL / POP-UP STYLE */
+.modal-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(2, 6, 23, 0.85);
+backdrop-filter: blur(8px);
+z-index: 2000;
+display: flex;
+justify-content: center;
+align-items: center;
+opacity: 0;
+pointer-events: none;
+transition: 0.3s ease;
+padding: 20px;
+}
+
+.modal-overlay.active {
+opacity: 1;
+pointer-events: auto;
+}
+
+.modal-content {
+background: #1e293b;
+border-radius: 24px;
+width: 100%;
+max-width: 750px;
+max-height: 85vh;
+overflow-y: auto;
+border: 1px solid rgba(56, 189, 248, 0.3);
+box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+position: relative;
+transform: scale(0.85);
+transition: 0.3s ease;
+padding: 30px;
+}
+
+.modal-overlay.active .modal-content {
+transform: scale(1);
+}
+
+.close-modal {
+position: absolute;
+top: 20px;
+right: 25px;
+font-size: 30px;
+color: #94a3b8;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.close-modal:hover {
+color: #ff0055;
+}
+
+.modal-body h2 {
+color: #38bdf8;
+margin-bottom: 10px;
+font-size: 28px;
+}
+
+.modal-price {
+display: inline-block;
+background: rgba(56, 189, 248, 0.1);
+color: #38bdf8;
+padding: 5px 15px;
+border-radius: 30px;
+font-weight: bold;
+margin-bottom: 20px;
+border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.modal-section-title {
+font-size: 18px;
+color: #fff;
+margin: 20px 0 10px 0;
+border-left: 4px solid #38bdf8;
+padding-left: 10px;
+font-weight: 600;
+}
+
+.modal-body p {
+color: #cbd5e1;
+line-height: 1.6;
+font-size: 15px;
+}
+
+.works-grid {
+display: grid;
+grid-template-columns: 1fr 1.2fr;
+gap: 20px;
+margin-top: 15px;
+background: rgba(15, 23, 42, 0.4);
+padding: 15px;
+border-radius: 15px;
+align-items: center;
+}
+
+.works-grid img {
+width: 100%;
+height: 160px;
+object-fit: cover;
+border-radius: 10px;
+border: 1px solid rgba(255,255,255,0.1);
+}
+
+@media(max-width: 600px) {
+.works-grid { grid-template-columns: 1fr; }
+}
+
+/* KEUNGGULAN CARD */
+.feature-card {
+padding: 40px 20px;
+}
+
+.feature-card i {
+font-size: 40px;
+color: #38bdf8;
+margin-bottom: 20px;
+}
+
+/* PROFIL FOTO BULAT TIM */
+#tim .card {
+padding: 30px 20px;
+align-items: center;
+}
+
 #tim .card img{
 width:140px;
 height:140px;
 border-radius:50%;
-margin:20px auto;
-display:block;
+margin-bottom:20px;
 object-fit:cover;
+border: 4px solid #38bdf8;
 }
 
 /* CONTACT */
+.contact-container {
+max-width: 600px;
+margin: 0 auto;
+background: #1e293b;
+padding: 40px;
+border-radius: 20px;
+border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
 .contact-box{
-margin:10px;
+margin: 20px 0;
 font-size:18px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 15px;
 }
 
 .contact-box i{
 color:#38bdf8;
-margin-right:10px;
+font-size: 24px;
 }
 
 /* FOOTER */
 footer{
 text-align:center;
-padding:20px;
+padding:30px;
 background:#020617;
-margin-top:30px;
+border-top: 1px solid rgba(255,255,255,0.05);
 }
 </style>
 </head>
@@ -185,97 +419,212 @@ margin-top:30px;
 <h1>IoTech</h1>
 <nav>
 <a href="#">Home</a>
-<a href="#layanan">Layanan</a>
+<a href="#produk">Produk & Harga</a>
+<a href="#keunggulan">Keunggulan</a>
 <a href="#tim">Tim</a>
 <a href="#kontak">Kontak</a>
 </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <div>
+  <div class="hero-bg"></div>
+  <div class="hero-content" data-aos="zoom-out">
     <h2>Solusi IoT Modern untuk Masa Depan</h2>
-    <p>Kami membantu kamu membuat sistem IoT canggih & terjangkau</p>
-    <a href="https://wa.me/6285189477216" class="btn">Konsultasi Sekarang</a>
+    <p>Kami membantu kamu membuat sistem IoT canggih, kustomisasi penuh, & harga sangat bersahabat.</p>
+    <a href="https://wa.me/6285189477216?text=Halo%20IoTech,%20saya%20mau%20konsultasi%20sistem%20IoT" class="btn"><i class="fab fa-whatsapp"></i> Konsultasi Sekarang</a>
   </div>
 </section>
 
-<!-- LAYANAN -->
-<section class="section" id="layanan">
-<h2 data-aos="fade-up">Produk Kami</h2>
+<section class="section" id="produk">
+<h2 data-aos="fade-up">Katalog Produk IoT</h2>
+<p class="section-subtitle" data-aos="fade-up">Klik pada kartu produk untuk melihat detail spesifikasi dan contoh hasil karyanya</p>
 
 <div class="cards">
 
-<div class="card" data-aos="zoom-in">
-<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc">
-<h3>Monitoring Air</h3>
-<p>Pantau kualitas air secara real-time</p>
+<div class="card" data-aos="fade-up" onclick="openProductModal(1)">
+<div class="product-image-wrapper">
+<img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc" alt="Monitoring Air">
+<span class="price-badge">Rp 450k+</span>
+</div>
+<div class="product-info">
+<h3>HydroWatch (Monitor Air)</h3>
+<p>Pantau TDS, pH, dan suhu air secara real-time via Blynk/Web. Cocok untuk hidroponik & tambak.</p>
+<button class="btn-sm">Lihat Detail</button>
+</div>
 </div>
 
-<div class="card" data-aos="zoom-in">
-<img src="https://images.unsplash.com/photo-1558002038-1055907df827">
-<h3>Smart Home</h3>
-<p>Kendalikan perangkat dari HP</p>
+<div class="card" data-aos="fade-up" data-aos-delay="100" onclick="openProductModal(2)">
+<div class="product-image-wrapper">
+<img src="https://images.unsplash.com/photo-1558002038-1055907df827" alt="Smart Home">
+<span class="price-badge">Rp 350k+</span>
+</div>
+<div class="product-info">
+<h3>HomeSync (Smart Home)</h3>
+<p>Kendalikan lampu, kipas, dan sakelar rumah lewat aplikasi Android/iOS atau perintah suara Google Assistant.</p>
+<button class="btn-sm">Lihat Detail</button>
+</div>
 </div>
 
-<div class="card" data-aos="zoom-in">
-<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
-<h3>Security System</h3>
-<p>Sistem keamanan berbasis sensor</p>
+<div class="card" data-aos="fade-up" data-aos-delay="200" onclick="openProductModal(3)">
+<div class="product-image-wrapper">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Security System">
+<span class="price-badge">Rp 500k+</span>
+</div>
+<div class="product-info">
+<h3>SecureGate (RFID/Biometric)</h3>
+<p>Sistem keamanan pintu menggunakan kartu RFID, Fingerprint, atau Face Recognition terintegrasi alarm Telegram.</p>
+<button class="btn-sm">Lihat Detail</button>
+</div>
+</div>
+
+<div class="card" data-aos="fade-up" onclick="openProductModal(4)">
+<div class="product-image-wrapper">
+<img src="https://images.unsplash.com/photo-1628359355624-855775b5c9c8" alt="Smart Agriculture">
+<span class="price-badge">Rp 600k+</span>
+</div>
+<div class="product-info">
+<h3>AgroGrow (Penyiram Otomatis)</h3>
+<p>Sistem otomatisasi penyiraman tanaman berdasarkan kelembaban tanah. Hemat air dan efisien.</p>
+<button class="btn-sm">Lihat Detail</button>
+</div>
+</div>
+
+<div class="card" data-aos="fade-up" data-aos-delay="100" onclick="openProductModal(5)">
+<div class="product-image-wrapper">
+<img src="https://images.unsplash.com/photo-1563770660941-20978e870e26" alt="Smart Weather">
+<span class="price-badge">Rp 400k+</span>
+</div>
+<div class="product-info">
+<h3>WeatherStation IoT</h3>
+<p>Monitor cuaca mikro (curah hujan, kecepatan angin, kelembaban udara) langsung ke dashboard PC.</p>
+<button class="btn-sm">Lihat Detail</button>
+</div>
+</div>
+
+<div class="card" data-aos="fade-up" data-aos-delay="200" onclick="openProductModal(6)">
+<div class="product-image-wrapper">
+<img src="https://images.unsplash.com/photo-1595079676339-1534801ad6cf" alt="Smart Poultry">
+<span class="price-badge">Rp 550k+</span>
+</div>
+<div class="product-info">
+<h3>PoultrySmart (Kandang Ayam)</h3>
+<p>Atur otomatis suhu lampu pemanas kandang ayam, kipas sirkulasi, dan jadwal pemberian pakan terjadwal.</p>
+<button class="btn-sm">Lihat Detail</button>
+</div>
+</div>
+
+<div class="card" data-aos="fade-up" onclick="openProductModal(7)">
+<div class="product-image-wrapper">
+<img src="https://images.unsplash.com/photo-1558441719-ff34b0524a24" alt="Energy Monitoring">
+<span class="price-badge">Rp 480k+</span>
+</div>
+<div class="product-info">
+<h3>WattSaver (Monitor Energi)</h3>
+<p>Ketahui konsumsi KWh listrik rumah atau mesin UMKM secara real-time untuk mencegah pembengkakan biaya.</p>
+<button class="btn-sm">Lihat Detail</button>
+</div>
+</div>
+
+<div class="card" data-aos="fade-up" data-aos-delay="100" onclick="openProductModal(8)">
+<div class="product-image-wrapper">
+<img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Attendance System">
+<span class="price-badge">Rp 700k+</span>
+</div>
+<div class="product-info">
+<h3>IoT Log (Absensi Cloud)</h3>
+<p>Mesin absensi karyawan berbasis RFID/Fingerprint yang datanya langsung masuk ke Google Sheets via WiFi.</p>
+<button class="btn-sm">Lihat Detail</button>
+</div>
+</div>
+
+<div class="card" data-aos="fade-up" data-aos-delay="200" onclick="openProductModal(9)">
+<div class="product-image-wrapper">
+<img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7" alt="Smart Parking">
+<span class="price-badge">Rp 650k+</span>
+</div>
+<div class="product-info">
+<h3>ParkRadar (Smart Parking)</h3>
+<p>Sistem deteksi ketersediaan slot parkir kosong menggunakan sensor ultrasonik dan display LED/Aplikasi.</p>
+<button class="btn-sm">Lihat Detail</button>
+</div>
+</div>
+
+<div class="card" data-aos="fade-up" onclick="openProductModal(10)">
+<div class="product-image-wrapper">
+<img src="https://images.unsplash.com/photo-1534224039826-c7a0dea0e66a" alt="Aquascape Monitor">
+<span class="price-badge">Rp 390k+</span>
+</div>
+<div class="product-info">
+<h3>AquaLux (Aquascape IoT)</h3>
+<p>Kontrol otomatis lampu UV, mesin filter, pemberi pakan ikan, dan monitor suhu air khusus pehobi Aquascape.</p>
+<button class="btn-sm">Lihat Detail</button>
+</div>
 </div>
 
 </div>
 </section>
 
-<!-- KEUNGGULAN -->
-<section class="section">
+<div class="modal-overlay" id="productModal" onclick="closeProductModal(event)">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeProductModal(event, true)">&times;</span>
+    <div class="modal-body" id="modalBody">
+      </div>
+  </div>
+</div>
+
+<section class="section" id="keunggulan" style="background: rgba(15, 23, 42, 0.5);">
 <h2 data-aos="fade-up">Kenapa Pilih Kami?</h2>
+<p class="section-subtitle" data-aos="fade-up">Kami memberikan kualitas terbaik dengan pelayanan prima</p>
 
 <div class="cards">
 
-<div class="card" data-aos="fade-right">
-<h3>⚡ Real-Time</h3>
-<p>Data langsung ke smartphone</p>
+<div class="card feature-card" data-aos="fade-right">
+<i class="fas fa-bolt"></i>
+<h3>Real-Time Data</h3>
+<p>Data dari sensor terkirim instan langsung ke smartphone atau dashboard web kamu.</p>
 </div>
 
-<div class="card" data-aos="fade-up">
-<h3>⚙️ Custom</h3>
-<p>Menyesuaikan kebutuhan kamu</p>
+<div class="card feature-card" data-aos="fade-up">
+<i class="fas fa-sliders-h"></i>
+<h3>Custom Request</h3>
+<p>Sistem diprogram menyesuaikan case/masalah spesifik dari tugas akhir maupun bisnismu.</p>
 </div>
 
-<div class="card" data-aos="fade-left">
-<h3>💰 Terjangkau</h3>
-<p>Cocok untuk mahasiswa & UMKM</p>
+<div class="card feature-card" data-aos="fade-left">
+<i class="fas fa-tags"></i>
+<h3>Harga Terjangkau</h3>
+<p>Sangat ramah di kantong mahasiswa, peneliti pemula, dan pelaku UMKM lokal.</p>
 </div>
 
 </div>
 </section>
 
-<!-- TIM -->
 <section class="section" id="tim">
-<h2 data-aos="fade-up">Tim Kami</h2>
+<h2 data-aos="fade-up">Tim Ahli Kami</h2>
+<p class="section-subtitle" data-aos="fade-up">Orang-orang di balik layar sistem andal IoTech</p>
 
-<div class="cards">
+<div class="cards" style="max-width: 700px; margin: 0 auto;">
 
 <div class="card" data-aos="zoom-in">
-<img src="https://raw.githubusercontent.com/muhammadimamnubaha-rgb/kewirausahaan-web/4cd43d1f7f171bb0be161ec1a88b0c465eaff40f/MUHAMMAD%20IMAM%20NUBAHA_2024903430104_TRKJ1B.jpg">
+<img src="https://raw.githubusercontent.com/muhammadimamnubaha-rgb/kewirausahaan-web/4cd43d1f7f171bb0be161ec1a88b0c465eaff40f/MUHAMMAD%20IMAM%20NUBAHA_2024903430104_TRKJ1B.jpg" alt="Muhammad Imam Nubaha">
 <h3>Muhammad Imam Nubaha</h3>
-<p>IoT Developer</p>
+<p style="color: #38bdf8; font-weight: 600;">IoT Developer</p>
 </div>
 
-<div class="card" data-aos="zoom-in">
-<img src="https://i.pravatar.cc/300?img=2">
+<div class="card" data-aos="zoom-in" data-aos-delay="200">
+<img src="" alt="Heru Setio Utomo">
 <h3>Heru Setio Utomo</h3>
-<p>Hardware Engineer</p>
+<p style="color: #38bdf8; font-weight: 600;">Hardware Engineer</p>
 </div>
 
 </div>
 </section>
 
-<!-- KONTAK -->
 <section class="section" id="kontak">
-<h2 data-aos="fade-up">Kontak Kami</h2>
+<h2 data-aos="fade-up">Mulai Proyekmu Sekarang</h2>
+<p class="section-subtitle" data-aos="fade-up">Konsultasikan ide atau problem sistem IoT yang ingin kamu bangun</p>
 
+<div class="contact-container" data-aos="zoom-in">
 <div class="contact-box">
 <p><i class="fa fa-phone"></i> 0851-8947-7216</p>
 </div>
@@ -284,13 +633,12 @@ margin-top:30px;
 <p><i class="fa fa-envelope"></i> muhammadimamnubaha@gmail.com</p>
 </div>
 
-<br>
-
-<a href="https://wa.me/6285189477216" class="btn">Chat WhatsApp</a>
+<a href="https://wa.me/6285189477216?text=Halo%20IoTech,%20saya%20mau%20order/tanya%20produk" class="btn" style="margin-top: 15px;"><i class="fab fa-whatsapp"></i> Chat WhatsApp</a>
+</div>
 </section>
 
 <footer>
-<p>© 2026 IoTech Solution</p>
+<p>© 2026 IoTech Solution. All Rights Reserved.</p>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -299,6 +647,126 @@ AOS.init({
 duration: 1000,
 once: true
 });
+
+// DATA DETAIL 10 PRODUK UNTUK MODAL POP-UP
+const dataProduk = {
+  1: {
+    nama: "HydroWatch (Monitor Kualitas Air)",
+    harga: "Rp 450.000+",
+    penjelasan: "HydroWatch dirancang untuk otomatisasi pengecekan kualitas air tanpa harus datang ke lokasi. Sistem mengintegrasikan mikrokontroler dengan sensor kimia air, mentransmisikan data setiap 5 detik ke cloud server sehingga grafik fluktuasi air terpantau detail.",
+    komponen: "ESP32, Sensor pH meter V1.1, Sensor TDS (Total Dissolved Solids), Sensor Suhu DS18B24, Modul WiFi.",
+    karyaImg: "https://images.unsplash.com/photo-1617155093730-a8bf47be792d",
+    karyaKet: "Implementasi HydroWatch pada kolam budidaya ikan nila intensif. Petambak dapat memantau kelayakan air langsung via smartphone, menurunkan angka kematian bibit hingga 40%."
+  },
+  2: {
+    nama: "HomeSync (Smart Home System)",
+    harga: "Rp 350.000+",
+    penjelasan: "HomeSync mengubah rumah konvensional menjadi cerdas. Dilengkapi enkripsi lokal untuk keamanan jaringan sakelar, memungkinkan kendali jarak jauh jarak tak terbatas selama alat terhubung ke internet.",
+    komponen: "NodeMCU ESP8266, Modul Relay 4 Channel, Sensor Arus ACS712, Integrasi Google Assistant & Blynk API.",
+    karyaImg: "https://images.unsplash.com/photo-1558002038-1055907df827",
+    karyaKet: "Instalasi HomeSync pada rumah minimalis. Membantu pemilik mengontrol AC dan pencahayaan utama saat berada di luar kota melalui perintah suara/aplikasi."
+  },
+  3: {
+    nama: "SecureGate (Smart Security Door)",
+    harga: "Rp 500.000+",
+    penjelasan: "Sistem keamanan pintu berlapis ganda. Jika terjadi pemaksaan kartu/akses ilegal, kamera lokal akan memicu sistem untuk mengambil gambar lalu otomatis mengirimkan alert darurat via Bot Telegram.",
+    komponen: "Solenoid Door Lock 12V, Modul RFID RC522, Sensor Fingerprint AS608, ESP32-CAM, Buzzer.",
+    karyaImg: "https://images.unsplash.com/photo-1563986768609-322da13575f3",
+    karyaKet: "Diterapkan pada ruang laboratorium komputer kampus untuk membatasi hak akses mahasiswa. Riwayat keluar masuk tercatat aman secara digital."
+  },
+  4: {
+    nama: "AgroGrow (Penyiram Otomatis Cerdas)",
+    harga: "Rp 600.000+",
+    pengiveness: "Sistem irigasi pintar yang membaca saturasi air dalam tanah. Pompa air hanya akan aktif jika tanah berada di bawah persentase kelembaban yang ditentukan pengguna, mencegah tanaman busuk akibat kelebihan air.",
+    penjelasan: "Sistem irigasi pintar yang membaca saturasi air dalam tanah. Pompa air hanya akan aktif jika tanah berada di bawah persentase kelembaban yang ditentukan pengguna, mencegah tanaman busuk akibat kelebihan air.",
+    komponen: "Arduino Uno/ESP32, Soil Moisture Sensor, Mini Water Pump 5V, Sensor Kelembaban Udara DHT22, LCD Display.",
+    karyaImg: "https://images.unsplash.com/photo-1592417817098-8f3d6eb19675",
+    karyaKet: "Proyek AgroGrow pada perkebunan tanaman hias hidroponik semi-indoor. Mampu menghemat konsumsi penggunaan air harian hingga 35%."
+  },
+  5: {
+    nama: "WeatherStation IoT (Mikro Cuaca)",
+    harga: "Rp 400.000+",
+    penjelasan: "Stasiun cuaca portabel berskala mikro. Mampu memprediksi dan mencatat perubahan kelembaban udara serta intensitas indeks sinar UV matahari lokal untuk kebutuhan riset pertanian.",
+    komponen: "NodeMCU, Sensor DHT11, Sensor Tekanan Udara BMP280, Sensor Sinar UV ML8511, Dashboard Thingspeak.",
+    karyaImg: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+    karyaKet: "Pemasangan WeatherStation di atap gedung universitas untuk mengumpulkan data iklim mikro harian guna menunjang tugas akhir mahasiswa lingkungan."
+  },
+  6: {
+    nama: "PoultrySmart (Otomatisasi Kandang Ayam)",
+    harga: "Rp 550.000+",
+    penjelasan: "Menjaga stabilitas ekosistem kandang ayam petelur/pedaging secara konstan. Mengatur nyala lampu penghangat jika cuaca dingin dan menghidupkan kipas jika suhu terlalu ekstrem.",
+    komponen: "ESP32, Sensor Suhu Waterproof, RTC DS3231 (Real Time Clock), Modul Servo Pakan, Relay Heavy Duty.",
+    karyaImg: "https://images.unsplash.com/photo-1516467508483-a7212febe31a",
+    karyaKet: "Implementasi pada peternakan ayam broiler di daerah dataran tinggi. Menekan angka stres pada ayam akibat suhu drop di malam hari."
+  },
+  7: {
+    nama: "WattSaver (Monitoring Energi Real-Time)",
+    harga: "Rp 480.000+",
+    penjelasan: "Alat pengukur konsumsi daya listrik presisi tinggi. Dapat menghitung akumulasi biaya rupiah penggunaan listrik secara real-time yang langsung dikirimkan ke telegram bulanan.",
+    komponen: "Sensor PZEM-004T, ESP8266, LCD I2C, Cloud Database Grafana/Blynk.",
+    karyaImg: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c",
+    karyaKet: "Digunakan oleh UMKM manufaktur keripik untuk memonitor beban daya listrik mesin pengemas utama guna memisahkan cost operational produksi."
+  },
+  8: {
+    nama: "IoT Log (Absensi Cloud Instan)",
+    harga: "Rp 700.000+",
+    penjelasan: "Solusi absensi modern tanpa antre lama. Cukup tap kartu atau gunakan sidik jari, data identitas langsung ter-input ke cloud Google Sheets dalam hitungan milidetik secara nirkabel.",
+    komponen: "ESP32 WiFi, RFID Reader, Fingerprint Scanner, Google Apps Script API, Indikator LED & Buzzer.",
+    karyaImg: "https://images.unsplash.com/photo-1521898284481-a5ec348cb555",
+    karyaKet: "Penerapan IoT Log pada startup logistik lokal. HRD bisa langsung merekap performa kehadiran karyawan tanpa perlu memindahkan data manual lewat flashdisk."
+  },
+  9: {
+    nama: "ParkRadar (Smart Parking Sensor)",
+    harga: "Rp 650.000+",
+    penjelasan: "Mengurangi waktu keliling mencari parkir kosong. Menggunakan pemetaan sensor jarak ultrasonik, status slot parkir (Tersedia/Penuh) langsung ter-update di panel layar utama gerbang masuk.",
+    komponen: "Sensor Ultrasonik HC-SR04, Mikrokontroler, Modul Komunikasi RS485/WiFi, I2C LED Matrix.",
+    karyaImg: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a",
+    karyaKet: "Sistem prototype ParkRadar yang dipasang pada area gedung perkantoran bersama, sangat membantu efisiensi waktu pengendara."
+  },
+  10: {
+    nama: "AquaLux (Aquascape Smart Controller)",
+    harga: "Rp 390.000+",
+    penjelasan: "Surganya pehobi aquascape. Mengatur siklus pencahayaan lampu LED (simulasi siklus matahari pagi-siang-malam), menjadwalkan rilis gas CO2, serta memberi makan ikan otomatis secara presisi.",
+    komponen: "NodeMCU, RTC DS3231, Modul Driver Mosfet Lampu dimmer, Motor Stepper pakan, Sensor Suhu.",
+    karyaImg: "https://images.unsplash.com/photo-1544551763-46a013bb70d5",
+    karyaKet: "Digunakan pada aquarium kontes tanaman air air tawar. Menjaga pertumbuhan tanaman ekosistem air tetap maksimal meskipun ditinggal berlibur."
+  }
+};
+
+function openProductModal(id) {
+  const produk = dataProduk[id];
+  if(!produk) return;
+  
+  const modalBody = document.getElementById('modalBody');
+  modalBody.innerHTML = `
+    <h2>${produk.nama}</h2>
+    <span class="modal-price">${produk.harga}</span>
+    
+    <div class="modal-section-title">Deskripsi Sistem</div>
+    <p>${produk.penjelasan}</p>
+    
+    <div class="modal-section-title">Komponen Utama</div>
+    <p style="color: #38bdf8; font-weight: 500;">${produk.komponen}</p>
+    
+    <div class="modal-section-title">Contoh Hasil Karya & Implementasi</div>
+    <div class="works-grid">
+      <img src="${produk.karyaImg}" alt="Hasil Karya">
+      <div>
+        <p style="font-size: 14px; font-style: italic; color: #94a3b8;">"${produk.karyaKet}"</p>
+        <a href="https://wa.me/6285189477216?text=Halo%20IoTech,%20saya%20tertarik%20ingin%20membuat%20sistem%20${encodeURIComponent(produk.nama)}" class="btn" style="margin-top: 15px; padding: 10px 20px; font-size: 14px;"><i class="fab fa-whatsapp"></i> Pesan Sistem Ini</a>
+      </div>
+    </div>
+  `;
+  
+  document.getElementById('productModal').classList.add('active');
+}
+
+function closeProductModal(event, forceClose = false) {
+  // Tutup modal jika mengklik background hitam luar atau tombol 'X'
+  if (event.target.classList.contains('modal-overlay') || forceClose) {
+    document.getElementById('productModal').classList.remove('active');
+  }
+}
 </script>
 
 </body>
